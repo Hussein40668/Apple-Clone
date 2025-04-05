@@ -3,6 +3,10 @@ const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
 
+// Import dotenv to load environment variables from a .env file into process.env
+const dotenv = require("dotenv");
+dotenv.config();
+
 // create an extance of express
 const app = express();
 
@@ -24,10 +28,10 @@ app.get("/", (req, res) => res.send("The Server is Up and running!"));
 
 //   / Create a MySQL connection
 const connection = mysql.createConnection({
-  host: "localhost", // MySQL server host
-  user: "myDBuser", // MySQL username
-  password: "myDBuser", // MySQL password
-  database: "apple_products", // Database to use
+  host: process.env.HOST, // MySQL server host
+  user: process.env.USER, // MySQL username
+  password: process.env.PASSWORD, // MySQL password
+  database: process.env.DATABASE, // Database to use
   //socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock", // Path to the MySQL socket file
 });
 
