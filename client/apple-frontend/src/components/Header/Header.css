@@ -7,6 +7,10 @@
 .nav-wrapper ul li a {
 	color: #fff;
 }
+.nav-wrapper ul li a:hover{
+	color: #e1dbdb;
+	opacity: 0.6;
+}
 .navbar-toggler {
 	color: #fff;
 }

@@ -1,6 +1,6 @@
 // bootstrap
-import "./commonResource/css/bootstrap.css";
-import "./commonResource/js/bootstrap.js";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./components/Footer/custom.js";
 
 import Main from "./Pages/Main/Main.jsx";
