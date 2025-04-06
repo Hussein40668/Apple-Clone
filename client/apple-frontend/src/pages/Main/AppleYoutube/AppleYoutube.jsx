@@ -3,13 +3,12 @@ import "./AppleYoutube.css";
 
 function AppleYoutube() {
   const [YoutubeVideos, setYoutubeVideos] = useState([]);
+  const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
 
   useEffect(() => {
     async function getVideos() {
       const response = await fetch(
-        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCE_M8A5yxnLfW0KghEeajjw&maxResults=6&key=AIzaSyBuliLlWyKRMlHCdmvjvkTF3P0lR-_j_cM&order=date`
-
-        // `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCxA7AzkI2Sndf8S1G5rSkwQ&maxResults=9&key=AIzaSyBuliLlWyKRMlHCdmvjvkTF3P0lR-_j_cM&order=date`
+        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCE_M8A5yxnLfW0KghEeajjw&maxResults=6&key=${apiKey}&order=date`
       );
       // console.log(response);
       const data = await response.json();
